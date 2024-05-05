@@ -5,9 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    [Header("プレイヤーの移動限界範囲")]
+    [SerializeField]
+    Vector2 left_down = new Vector2(-9f, -4.7f);
+
+    [SerializeField]
+    Vector2 right_top = new Vector2(9f, 4.7f);
+
+    [Header("移動速度")]
     [SerializeField]
     float const_speed = 4f;
 
+    [Header("射撃間隔")]
     [SerializeField]
     float fire_interval = 1f;
 
@@ -34,7 +43,12 @@ public class Player : MonoBehaviour
         vel.Normalize();
         float speed = Input.GetKey(KeyCode.LeftShift) ? (const_speed / 2f) : const_speed;
 
-        transform.position += vel * Time.deltaTime * speed;
+        Vector3 position = transform.position + vel * Time.deltaTime * speed;
+
+        position.x = Mathf.Clamp(position.x, left_down.x, right_top.x);
+        position.y = Mathf.Clamp(position.y, left_down.y, right_top.y);
+
+        transform.position = position;
     }
 
     void Fire()

@@ -225,8 +225,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2098999944}
   - component: {fileID: 2098999943}
-  - component: {fileID: 2098999942}
   - component: {fileID: 2098999945}
+  - component: {fileID: 2098999946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -234,20 +234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2098999942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098999941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cf02075e06e6bb40ad77854259ed2da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  const_speed: 4
-  fire_interval: 20
 --- !u!212 &2098999943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -336,6 +322,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.625, z: 0}
   m_Center: {x: 0, y: 0.125, z: 0}
+--- !u!114 &2098999946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098999941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf02075e06e6bb40ad77854259ed2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left_down: {x: -9, y: -4.7}
+  right_top: {x: 9, y: 4.7}
+  const_speed: 4
+  fire_interval: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
